@@ -1,34 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zzz Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand text-white" href="#">Zzz Tracker</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >History <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Graph</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="profile"><p2>Login</p2> <p2>Sign Up</p2></div>
+    <div class="clock">
+      <canvas
+      id="canvas"
+      width="400"
+      height="400"
+      ></canvas>
+    </div>
+    <div class="log">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, laudantium? Itaque quasi nobis, sed eveniet delectus amet quam voluptas tempore id facilis illo asperiores, ex, fugit dolore voluptatem corrupti? Voluptas.</p>
+    </div>
     
-</body>
+    <script>
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      var radius = canvas.height / 2;
+      ctx.translate(radius, radius);
+      radius = radius * 0.9;
+      drawClock();
+
+      function drawClock() {
+        ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+      function drawClock() {
+        drawFace(ctx, radius);
+      }
+
+      function drawFace(ctx, radius) {
+        ctx.beginPath();
+        ctx.strokeStyle = "white";
+        ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+        ctx.lineWidth = radius * 0.05;
+        ctx.stroke();
+      }
+      function drawClock() {
+        drawFace(ctx, radius);
+        drawNumbers(ctx, radius);
+      }
+
+      function drawNumbers(ctx, radius) {
+        var ang;
+        var num;
+        ctx.font = radius * 0.15 + "px arial";
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "center";
+        for (num = 1; num < 13; num++) {
+          ang = (num * Math.PI) / 6;
+          ctx.rotate(ang);
+          ctx.translate(0, -radius * 0.85);
+          ctx.rotate(-ang);
+          ctx.fillText(num.toString(), 0, 0);
+          ctx.rotate(ang);
+          ctx.translate(0, radius * 0.85);
+          ctx.rotate(-ang);
+        }
+      }
+      function drawClock() {
+        console.log(canvas.width,canvas.height)
+        ctx.clearRect(-200, -200, canvas.width, canvas.height);
+        drawFace(ctx, radius);
+        drawTime(ctx, radius);
+      }
+
+      function drawTime(ctx, radius) {
+        var now = new Date();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        //hour
+        hour = hour % 12;
+        hour =
+          (hour * Math.PI) / 6 +
+          (minute * Math.PI) / (6 * 60) +
+          (second * Math.PI) / (360 * 60);
+        drawHand(ctx, hour, radius * 0.5, radius * 0.05);
+        //minute
+        minute = (minute * Math.PI) / 30 + (second * Math.PI) / (30 * 60);
+        drawHand(ctx, minute, radius * 0.8, radius * 0.05);
+        // second
+        second = (second * Math.PI) / 30;
+        drawHand(ctx, second, radius * 0.9, radius * 0.02);
+      }
+
+      function drawHand(ctx, pos, length, width) {
+        
+        ctx.beginPath();
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = width;
+        ctx.lineCap = "round";
+        ctx.moveTo(0, 0);
+        ctx.rotate(pos);
+        ctx.lineTo(0, -length);
+        ctx.stroke();
+        ctx.rotate(-pos);
+      }
+      setInterval(drawClock, 1000);
+    </script>
+  </body>
 </html>

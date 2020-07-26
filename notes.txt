@@ -1,4 +1,4 @@
-Must utilize at least two libraries, packages, or technologies that we haven’t discusse
+Must utilize at least two libraries, packages, or technologies that we haven’t discuss
 - Chart JS
 - Canvas Clock Start
 
@@ -13,9 +13,9 @@ Must have folder structure that meets MVC Paradigm
 
 
 Features:
-Rate
+Rate:
 Temperature
-Compare your sleep
+Compare your sleep to average of other users
 Share your sleep
 
 
@@ -30,7 +30,7 @@ An overview of the intended application and WHY you feel it’s valuable.
 
 A breakdown of roles by group member.
 - Front: Lauren & Kenny
-Html
+Html: home, signup
 Clock
 Chart
 
@@ -50,6 +50,7 @@ A screenshot of your Jira, Trello, or Project Management Board that shows breakd
 A set of DETAILED screen-by-screen design layouts with annotations describing all UI/UX components and all data relevant to the screen.
 
 On this note, show Slides 26-27 as an example of a UI/UX and Data Flow layout. Tell the class that you’ll expect something akin to these drafts.
+- Home 
 
 
 
