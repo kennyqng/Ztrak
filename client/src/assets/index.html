@@ -47,25 +47,42 @@
       ctx.translate(radius, radius);
       radius = radius * 0.9;
       drawClock();
-
+      
+      // function drawClock() {
+      //   ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+      //   ctx.fill();
+      // }
       function drawClock() {
         ctx.arc(0, 0, radius, 0, 2 * Math.PI);
         ctx.fill();
-      }
-      function drawClock() {
         drawFace(ctx, radius);
+        drawNumbers(ctx, radius);
+        console.log(canvas.width,canvas.height)
+        ctx.clearRect(-200, -200, canvas.width, canvas.height);
+        drawFace(ctx, radius);
+        drawTime(ctx, radius);
       }
-
+      
+      // function drawClock() {
+      //   drawFace(ctx, radius);
+      // }
+      // function drawClock() {
+      //   drawFace(ctx, radius);
+      //   drawNumbers(ctx, radius);
+      // }
+      // function drawClock() {
+      //   console.log(canvas.width,canvas.height)
+      //   ctx.clearRect(-200, -200, canvas.width, canvas.height);
+      //   drawFace(ctx, radius);
+      //   drawTime(ctx, radius);
+      // }
+      
       function drawFace(ctx, radius) {
         ctx.beginPath();
         ctx.strokeStyle = "white";
         ctx.arc(0, 0, radius, 0, 2 * Math.PI);
         ctx.lineWidth = radius * 0.05;
         ctx.stroke();
-      }
-      function drawClock() {
-        drawFace(ctx, radius);
-        drawNumbers(ctx, radius);
       }
 
       function drawNumbers(ctx, radius) {
@@ -84,12 +101,6 @@
           ctx.translate(0, radius * 0.85);
           ctx.rotate(-ang);
         }
-      }
-      function drawClock() {
-        console.log(canvas.width,canvas.height)
-        ctx.clearRect(-200, -200, canvas.width, canvas.height);
-        drawFace(ctx, radius);
-        drawTime(ctx, radius);
       }
 
       function drawTime(ctx, radius) {

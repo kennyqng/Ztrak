@@ -1,6 +1,7 @@
 import React from "react";
 import {login} from '../utils/API'
-import Clock from "./components/Clock";
+import Clock from "../components/Clock"
+import Navbar from "../components/Navbar/Navbar";
 
 function Home(props) {
   const handleLogin = () => {
@@ -15,7 +16,7 @@ function Home(props) {
   <div>Home Page</div>
   <button onClick={handleLogin}>CLICK ME TO HIT API ROUTE</button>
   <Clock></Clock>
-  </>;
+  </>
 }
 
 export default Home;
