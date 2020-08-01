@@ -3,6 +3,9 @@ import { login } from "../utils/API";
 import Clock from "../components/Clock";
 import Log from "../components/Log";
 import Navbar from "../components/Navbar/Navbar";
+import Login from "../components/Login";
+import Chart from "../components/Chart";
+
 
 function Home(props) {
   const handleLogin = () => {
@@ -20,6 +23,7 @@ function Home(props) {
       <Clock></Clock>
       <button className="sleepWake">Sleep/Wake</button>
       <Log></Log>
+      <Chart data /> 
     </>
   );
 }
