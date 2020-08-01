@@ -23,7 +23,7 @@ function Home(props) {
       <Clock></Clock>
       <button className="sleepWake">Sleep/Wake</button>
       <Log></Log>
-      <Chart></Chart>
+      <Chart data /> 
     </>
   );
 }

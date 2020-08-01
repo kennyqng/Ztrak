@@ -3,7 +3,11 @@ import { Bar } from 'react-chartjs-2';
 import 'chartjs-plugin-datalabels';
 
 
+
+//display if finished loading otherwise show a loading indicator
+//
 const data = {
+  displayName: 'BarGraph',
   labels: ['8/1', '8/2', '8/3', '8/4', '8/5', '8/6', '8/7'],
   datasets: [
     {
@@ -19,15 +23,13 @@ const data = {
 };
 
 
-export default React.createClass({
-  displayName: 'BarGraph',
+const Chart = (props) => {
 
-  render() {
     return (
       <div>
         <h2>Hours of Sleep For the Week</h2>
         <Bar
-         
+          
          data={data}
          options={{
            scales: {
@@ -55,5 +57,6 @@ export default React.createClass({
        />
      </div>
    );
- }
-});
+};
+
+export default Chart;
