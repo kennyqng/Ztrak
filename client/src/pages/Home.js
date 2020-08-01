@@ -3,7 +3,10 @@ import { login } from "../utils/API";
 import Clock from "../components/Clock";
 import Log from "../components/Log";
 import Navbar from "../components/Navbar/Navbar";
+import Login from "../components/Login";
 import SleepBtn from "../components/SleepBtn";
+import Chart from "../components/Chart";
+
 
 function Home(props) {
   const handleLogin = () => {
@@ -18,9 +21,10 @@ function Home(props) {
     <>
       <div>Home Page</div>
       <button onClick={handleLogin}>CLICK ME TO HIT API ROUTE</button>
-      <Clock/>
+      <Clock></Clock>
       <SleepBtn/>
-      <Log/>
+      <Log></Log>
+      <Chart data /> 
     </>
   );
 }

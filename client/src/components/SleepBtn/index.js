@@ -9,7 +9,7 @@ function SleepBtn() {
 
     return (
         <div>
-            <button type="button" className="btn btn-success" onClick={clickMe}>Success</button>
+            <button type="button" className="btn btn-success" onClick={clickMe}>Sleep</button>
         </div>
     )
 }
