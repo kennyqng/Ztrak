@@ -4,8 +4,9 @@ import PrivateRoute from "./PrivateRoute";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import { AuthContext } from "./context/auth";
-import Login from "./pages/Login";
+import Login from "./pages/Login/";
 import Signup from "./pages/Signup";
+
 
 function App(props) {
   const [authTokens, setAuthTokens] = useState();
