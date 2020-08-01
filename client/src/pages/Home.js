@@ -1,24 +1,31 @@
-import React from "react";
-import {login} from '../utils/API'
-import Clock from "../components/Clock"
+import React, { useState } from "react";
+import { login } from "../utils/API";
+import Clock from "../components/Clock";
+import Log from "../components/Log";
 import Navbar from "../components/Navbar/Navbar";
 import Login from "../components/Login";
+import Chart from "../components/Chart";
+
 
 function Home(props) {
   const handleLogin = () => {
     login({
       email: "kenny@nguyen.com",
       password: "watermelon"
-    }).then(({data})=>{
-      console.log(data)
-    })
-  }
-  return <>
-  <div>Home Page</div>
-  <button onClick={handleLogin}>CLICK ME TO HIT API ROUTE</button>
-  <Clock></Clock>
-  <Login></Login>
-  </>
+    }).then(({ data }) => {
+      console.log(data);
+    });
+  };
+  return (
+    <>
+      <div>Home Page</div>
+      <button onClick={handleLogin}>CLICK ME TO HIT API ROUTE</button>
+      <Clock></Clock>
+      <button className="sleepWake">Sleep/Wake</button>
+      <Log></Log>
+      <Chart></Chart>
+    </>
+  );
 }
 
 export default Home;
