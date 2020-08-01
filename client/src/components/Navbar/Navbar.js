@@ -5,7 +5,7 @@ import "./style.css";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light">
       <Link className="navbar-brand" to="/">
         ZTrak
       </Link>
@@ -20,7 +20,7 @@ function Navbar() {
                   : "nav-link"
               }
             >
-              Home Page
+              Home
             </Link>
           </li>
           <li className="nav-item">
@@ -28,7 +28,7 @@ function Navbar() {
               to="/admin"
               className={window.location.pathname === "/admin" ? "nav-link active" : "nav-link"}
             >
-              Admin Page
+              Admin
             </Link>
           </li>
         </ul>
