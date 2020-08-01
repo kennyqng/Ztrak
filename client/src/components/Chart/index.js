@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import 'chartjs-plugin-datalabels';
+import "./style.css";
 
 
 
@@ -26,8 +27,8 @@ const data = {
 const Chart = (props) => {
 
     return (
-      <div>
-        <h2>Hours of Sleep For the Week</h2>
+      <div className="chart">
+        <p>Hours of Sleep For the Week</p>
         <Bar
           
          data={data}

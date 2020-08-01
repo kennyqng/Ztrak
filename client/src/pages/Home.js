@@ -4,6 +4,7 @@ import Clock from "../components/Clock";
 import Log from "../components/Log";
 import Navbar from "../components/Navbar/Navbar";
 import Login from "../components/Login";
+import SleepBtn from "../components/SleepBtn";
 import Chart from "../components/Chart";
 
 
@@ -21,7 +22,7 @@ function Home(props) {
       <div>Home Page</div>
       <button onClick={handleLogin}>CLICK ME TO HIT API ROUTE</button>
       <Clock></Clock>
-      <button className="sleepWake">Sleep/Wake</button>
+      <SleepBtn/>
       <Log></Log>
       <Chart data /> 
     </>
