@@ -21,9 +21,9 @@ class Clock extends React.Component {
 
     function drawFace(ctx, radius) {
       ctx.beginPath();
-      ctx.strokeStyle = "gray";
+      ctx.strokeStyle = "white";
       ctx.arc(0, 0, radius, 0, 2 * Math.PI);
-      ctx.lineWidth = radius * 0.05;
+      ctx.lineWidth = radius * 0.04;
       ctx.stroke();
     }
 
@@ -45,7 +45,7 @@ class Clock extends React.Component {
     //   }
     // }
     drawClock = () => {
-      console.log(this.refs.canvas.width, this.refs.canvas.height);
+      // console.log(this.refs.canvas.width, this.refs.canvas.height);
       ctx.clearRect(
         -200,
         -200,
@@ -68,10 +68,10 @@ class Clock extends React.Component {
         (hour * Math.PI) / 6 +
         (minute * Math.PI) / (6 * 60) +
         (second * Math.PI) / (360 * 60);
-      drawHand(ctx, hour, radius * 0.5, radius * 0.05);
+      drawHand(ctx, hour, radius * 0.5, radius * 0.04);
       //minute
       minute = (minute * Math.PI) / 30 + (second * Math.PI) / (30 * 60);
-      drawHand(ctx, minute, radius * 0.8, radius * 0.05);
+      drawHand(ctx, minute, radius * 0.8, radius * 0.04);
       // second
       second = (second * Math.PI) / 30;
       drawHand(ctx, second, radius * 0.9, radius * 0.02);
@@ -79,7 +79,7 @@ class Clock extends React.Component {
 
     function drawHand(ctx, pos, length, width) {
       ctx.beginPath();
-      ctx.strokeStyle = "gray";
+      ctx.strokeStyle = "white";
       ctx.lineWidth = width;
       ctx.lineCap = "round";
       ctx.moveTo(0, 0);
