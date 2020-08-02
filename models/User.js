@@ -11,7 +11,28 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  sleepTrack: [
+    {
+      date: {
+        type: String
+      },
+      sleepTime: {
+        type: String
+      },
+      wakeTime: {
+        type: String
+      },
+      
+      hourSlept: {
+        type: Number
+      },
+      
+      rating: {
+        type: Number
+      }
+    }
+  ]
 });
 
 userSchema.pre("save", function(){
