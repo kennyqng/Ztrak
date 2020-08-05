@@ -8,8 +8,8 @@ router.post("/login",passport.authenticate('local'),((req,res)=>{
     res.json(req.user)
 }))
 
-router.post('/signup', (req,res)=>{
-    db.User.create(req.body).then(user=> {
+router.post('/signup', ({body:{passwordConf, ...data}},res)=>{
+    db.User.create(data).then(user=> {
         console.log(user)
     })
 });

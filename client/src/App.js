@@ -4,7 +4,6 @@ import PrivateRoute from "./PrivateRoute";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import { AuthContext } from "./context/auth";
-import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -31,9 +30,8 @@ function App(props) {
             </li>
           </ul> */}
           <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <PrivateRoute path="/admin" component={Admin} />
+          <Route exact path="/auth" component={Signup} />
+          <PrivateRoute exact path="/admin" component={Admin} />
         </div>
       </Router>
     </AuthContext.Provider>
