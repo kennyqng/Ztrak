@@ -12,8 +12,10 @@ passport.use(
       passwordField: "password"
     },
     (username, password, done) => {
+      console.log("Passport middleware running!")
       // When a user tries to sign in this code runs
       db.User.findOne({username}).then(async dbUser => {
+        console.log("passport",dbUser)
         // If there's no user with the given email
         const passwordCorrect = await dbUser.checkPW(password);
         if (!dbUser) {

@@ -1,54 +1,23 @@
-import React, {useState} from "react";
-import ReactDOM from 'react-dom';
 
+
+import React, {useState} from "react";
+import {sleepWake} from '../../utils/API'
 import "./style.css";
 
 
 function SleepBtn() {
-    const sleepTime = Date.now();
-    function clickMe() {
-        console.log("current time is " + sleepTime)
-    }
+    const [sleepTime, setSleepTime] = useState (Date.now);
+    const [buttonText, setButtonText] = useState("Sleep");
 
-    return (
-        <div>
-            <button type="button" className="btn btn-success" onClick={clickMe}>Sleep</button>
-        </div>
-    )
+    const handleSleepWake = () => {
+        setButtonText(buttonText === "Sleep" ? "Wake Up" : "Sleep")
+        
+    }
+     //same as creating your state variable where "Next" is the default value for buttonText and setButtonText is the setter function for your state variable instead of setState
+
+return  <button onClick={handleSleepWake}>{buttonText}</button>
+
 }
 
 export default SleepBtn;
-
-// import React, {useState} from "react";
-// import ReactDOM from 'react-dom';
-// import "./style.css";
-
-
-// function SleepBtn() {
-//     const [sleepTime, setSleepTime] = useState (Date.now);
-//     const [background, setBackground] = useState (backgroundImge[client\src\index.css])
-   
-//     useEffect (() => {
-//     function changeSleepStatus (asleep) {
-//         setSleepTime(sleepTime(Date.now));
-        
-//     }
-//    }
-//    );
-//     const sleepTime = Date.now();
-//     function clickMe() {
-//         console.log("current time is " + sleepTime)
-//     }
-
-//     return (
-//         <div>
-//             <button onClick={() => setSleep(sleep)}>
-//     Click me
-//   </button>
-//             <button type="button" className="btn btn-success" onClick={clickMe}>Sleep</button>
-//         </div>
-//     )
-// }
-
-// export default SleepBtn;
 
