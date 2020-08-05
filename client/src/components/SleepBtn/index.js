@@ -14,7 +14,7 @@ function SleepBtn() {
     }
      //same as creating your state variable where "Next" is the default value for buttonText and setButtonText is the setter function for your state variable instead of setState
 
-return  <div class="button" justify-content="center">
+return  <div class="button-container" justify-content="center">
         <Button size="lg" onClick={handleSleepWake}>{buttonText}</Button>
         </div>
 }
