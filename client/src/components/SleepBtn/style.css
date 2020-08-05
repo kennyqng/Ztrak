@@ -1,6 +1,8 @@
-.btn {
+.button-container {
     margin: 15px;
+    padding: 50px 45vw 50px 45vw;
+    margin: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    
+   
 }

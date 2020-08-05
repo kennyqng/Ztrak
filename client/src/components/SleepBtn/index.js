@@ -1,7 +1,6 @@
-
-
 import React, {useState} from "react";
 import {sleepWake} from '../../utils/API'
+import { Button } from 'reactstrap';
 import "./style.css";
 
 
@@ -11,13 +10,15 @@ function SleepBtn() {
 
     const handleSleepWake = () => {
         setButtonText(buttonText === "Sleep" ? "Wake Up" : "Sleep")
-        
+
     }
      //same as creating your state variable where "Next" is the default value for buttonText and setButtonText is the setter function for your state variable instead of setState
 
-return  <button onClick={handleSleepWake}>{buttonText}</button>
-
+return  <div class="button-container" justify-content="center">
+        <Button size="lg" onClick={handleSleepWake}>{buttonText}</Button>
+        </div>
 }
 
 export default SleepBtn;
 
+    

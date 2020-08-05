@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Login from "../components/Login";
 import SleepBtn from "../components/SleepBtn";
 import Chart from "../components/Chart";
+import {Container, Row, Col} from 'reactstrap';
 
 
 function Home(props) {
@@ -23,8 +24,16 @@ function Home(props) {
       <button onClick={handleLogin}>CLICK ME TO HIT API ROUTE</button>
       <Clock></Clock>
       <SleepBtn/>
-      <Log></Log>
-      <Chart data /> 
+        <Container>
+          <Row>
+            <Col>
+              <Log></Log>
+            </Col>
+            <Col>
+              <Chart data />
+            </Col>
+          </Row>
+        </Container>
     </>
   );
 }
