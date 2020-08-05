@@ -1,6 +1,8 @@
-.btn {
+.button {
     margin: 15px;
+    padding: 100px;
+    margin: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    float: right;
+   
 }

@@ -1,11 +1,15 @@
 .sleepLog {
     display: block;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    outline: 004C99;
+    min-width: 360px;
+    max-width: 700px;
     text-align: center;
+    border-color: 004C99;
     color: rgb(255, 255, 255);
     border-style: solid;
-    background-color: rgb(47, 49, 96);
+    background-color: rgb(00, 33, 66);
     opacity: .8;
 }
