@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import Home from "./pages/Home";
@@ -6,18 +6,15 @@ import Admin from "./pages/Admin";
 import { AuthContext } from "./context/auth";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar/Navbar";
+import {getCurrentUser} from "./utils/API";
 
 
-function App(props) {
-  const [authTokens, setAuthTokens] = useState();
-
-  const setTokens = data => {
-    localStorage.setItem("tokens", JSON.stringify(data));
-    setAuthTokens(data);
-  };
+function App() {
+  const [user,setUser] = useState();
+useEffect(()=> getCurrentUser().then(({data})=> setUser(data)), [])
 
   return (
-    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+    <AuthContext.Provider value={{user, setUser}}>
       <Router>
         <div>
           <Navbar></Navbar>
@@ -29,8 +26,8 @@ function App(props) {
               <Link to="/admin">Admin Page</Link>
             </li>
           </ul> */}
-          <Route exact path="/" component={Home} />
-          <Route exact path="/auth" component={Signup} />
+          <Route exact path="/" component={Signup} />
+          <Route exact path="/home" component={Home} />
           <PrivateRoute exact path="/admin" component={Admin} />
         </div>
       </Router>
