@@ -26,6 +26,7 @@
     "bcrypt": "^5.0.0",
     "bootstrap": "^4.5.1",
     "chart.js": "^2.9.3",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
@@ -37,6 +38,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "reactstrap": "^8.5.1",
+    "strap": "^0.1.0",
     "styled-components": "^5.1.1"
   }
 }
