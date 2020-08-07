@@ -2,6 +2,7 @@ const router = require("express").Router();
 const {User} = require("../models")
 
 router.put("/newentry/:id", (req,res)=>{
+    const { type } = req.body;
     const date = new Date();
     const dateStr = `${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`
     const sleepTime = `${date.getHours()}:${date.getMinutes()}`

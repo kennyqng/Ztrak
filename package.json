@@ -40,5 +40,8 @@
     "reactstrap": "^8.5.1",
     "strap": "^0.1.0",
     "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
