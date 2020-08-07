@@ -28,7 +28,7 @@ function Navbar() {
               to="/admin"
               className={window.location.pathname === "/admin" ? "nav-link active" : "nav-link"}
             >
-              Admin
+              Login
             </Link>
           </li>
         </ul>

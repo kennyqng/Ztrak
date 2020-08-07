@@ -16,8 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Atlas connection
-const uri = process.env.ATLAS_URI || "mongodb://localhost/ztrakdev.db";
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
+const uri = process.env.ATLAS_URI || "mongodb://localhost/ztrakdev_db";
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true,  useUnifiedTopology: true  }
 );
 const connection = mongoose.connection;
 connection.once('open', () => {

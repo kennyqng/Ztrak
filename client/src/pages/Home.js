@@ -20,8 +20,8 @@ function Home(props) {
   };
   return (
     <>
-      <div>Home Page</div>
-      <button onClick={handleLogin}>CLICK ME TO HIT API ROUTE</button>
+      {/* <div>Home Page</div>
+      <button onClick={handleLogin}>CLICK ME TO HIT API ROUTE</button>  RS: I don't think we need these 2 lines??*/}
       <Clock></Clock>
       <SleepBtn/>
         <Container>
