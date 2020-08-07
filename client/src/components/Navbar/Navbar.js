@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import {AuthContext} from "../../context/auth"
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
+  const {user} = useContext(AuthContext)
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <Link className="navbar-brand" to="/">
@@ -22,6 +24,9 @@ function Navbar() {
             >
               Home
             </Link>
+          </li>
+          <li>
+            <button>Welcome {user? user.username : ""}!</button>
           </li>
           <li className="nav-item">
             <Link

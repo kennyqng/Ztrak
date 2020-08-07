@@ -3,7 +3,6 @@ import { login } from "../utils/API";
 import Clock from "../components/Clock";
 import Log from "../components/Log";
 import Navbar from "../components/Navbar/Navbar";
-import Login from "../components/Login";
 import SleepBtn from "../components/SleepBtn";
 import Chart from "../components/Chart";
 import {Container, Row, Col} from 'reactstrap';
