@@ -48,10 +48,10 @@ function Log() {
   ];
   return (
     <div className="sleepLog">
-      <p2>Date - Sleep Time -  Wake Time - Total Sleep</p2>
+      <p>Date - Sleep Time -  Wake Time - Total Sleep</p>
       <div className="sleepEntry">
-        {sleeps.map(sleep => (
-          <p>
+        {sleeps.map((sleep, index) => (
+          <p key={index}>
             {sleep.date} - - -
             {sleep.sleepTime} - - -
             {sleep.wakeTime} - - -
