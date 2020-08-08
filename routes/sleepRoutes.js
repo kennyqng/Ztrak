@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const {User} = require("../models")
+const {User} = require("../models");
+const moment = require("moment");
 
 router.put("/newentry/:id", (req,res)=>{
     console.log("---------->"+req.params.id)
@@ -18,12 +19,19 @@ router.put("/wakeup/:id", (req,res)=>{
         const i = user.sleepTrack.length - 1;
 
         user.sleepTrack[i].wakeTime = wakeTime;
+        const sleepTime = moment(user.sleepTrack.slice(-1)[0].sleepTime);
+
+        console.log(sleepTime.diff(moment(wakeTime), "seconds"))
         // console.log(user.sleepTrack);
 
 
         User.findByIdAndUpdate(req.params.id, {sleepTrack: user.sleepTrack} ).then(data=> console.log(data))
     })
 })
+
+// router.put("/hrsSlept/:id", (req,res)=>{
+//     const sleepTime =  req.params.id   
+// })
 
 
 module.exports = router;

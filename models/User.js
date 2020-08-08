@@ -33,7 +33,8 @@ const userSchema = new Schema({
       }
     }
   ]
-});
+})
+
 
 userSchema.pre("save", function(){
     return bcrypt.hash(this.password, 10).then(hash=> 
