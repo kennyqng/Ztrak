@@ -1,13 +1,14 @@
-import React, {useState} from "react";
-import {useParams} from "react-router-dom";
+import React, {useState, useContext} from "react";
+import {AuthContext} from "../../context/auth"
+// import {useParams} from "react-router-dom";
 import {sleepWake} from '../../utils/API'
 import { Button } from 'reactstrap';
 import "./style.css";
 
 
 function SleepBtn() {
-    let { id } = useParams()
-    console.log(id);
+    const { user } = useContext(AuthContext)
+    console.log(user);
 
     //const [sleepTime, setSleepTime] = useState (Date.now);
     const [buttonText, setButtonText] = useState("Sleep");
@@ -16,7 +17,8 @@ function SleepBtn() {
         const date = new Date();
         const now = date.now;
         setButtonText(buttonText === "Sleep" ? "Wake Up" : "Sleep")
-        sleepWake ({type: buttonText}, id);
+        sleepWake ( {type: buttonText}, user._id);
+        
     }
     
 
