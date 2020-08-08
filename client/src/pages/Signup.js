@@ -2,7 +2,8 @@ import React, {useState, useContext} from "react";
 import logoImg from "../img/Logo.jpg";
 import { Card, Logo, Form, Input, Button } from '../components/AuthForms';
 import  {signup, login} from '../utils/API'
-import {AuthContext} from "../context/auth"
+import {AuthContext} from "../context/auth";
+import {Redirect} from "react-router-dom";
 
 function Signup() {
   const [isLogin, setIsLogin] = useState(true);
@@ -11,7 +12,7 @@ function Signup() {
     password: "",
     passwordConf: ""
   })
-  const {setUser} = useContext(AuthContext)
+  const {user, setUser} = useContext(AuthContext)
 
   const handleInputChange = ({target:{name,value}}) =>{
     setInput({...input, [name]:value});
@@ -31,6 +32,7 @@ function Signup() {
         console.log("LOGGIN YOU IN!", input.password)
         login({username:input.username, password:input.password}).then(({data})=>{
           console.log(data);
+          localStorage.setItem("currentUser", JSON.stringify(data))
           setUser(data);
           window.location.replace("/home")
         })
@@ -42,6 +44,8 @@ function Signup() {
   }
  
   return (
+    <>
+    {user ? <Redirect to="/home"/> : ""}
     <Card>
       <Logo src={logoImg} />
       <Form>email
@@ -52,6 +56,7 @@ function Signup() {
       </Form>
       <p onClick={loginSwitch} style={{cursor:"pointer", color:"white"}}>{isLogin ? "Sign Up New Account" : "Already have an account?"}</p>
     </Card>
+    </>
   );
 }
 

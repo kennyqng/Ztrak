@@ -1,29 +1,28 @@
 const router = require("express").Router();
-const {User} = require("../models")
+const {User} = require("../models");
+const moment = require('moment');
 
 router.put("/newentry/:id", (req,res)=>{
     console.log("---------->"+req.params.id)
     const { type } = req.body;
     const date = new Date();
     const dateStr = `${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`
-    const sleepTime = `${date.getHours()}:${date.getMinutes()}`
+    const sleepTime = moment().toISOString()
     
-    User.findByIdAndUpdate(req.params.id, {$push: {sleepTrack: {date: dateStr, sleepTime}}}).then(userData=> console.log(userData))
+    User.findByIdAndUpdate(req.params.id, {$push: {sleepTrack: {date: dateStr, sleepTime}}}).then(()=> User.findById(req.params.id).then(data=> res.json(data)))
 });
 
 router.put("/wakeup/:id", (req,res)=>{
-    const date = new Date();
-    const wakeTime = `${date.getHours()}:${date.getMinutes()}`;
+    const wakeTime = moment().toISOString()
     User.findById(req.params.id).then(user=> {
         const i = user.sleepTrack.length - 1;
-
+        const hourSlept = moment(wakeTime).diff(moment(user.sleepTrack[i].sleepTime), "seconds")
         user.sleepTrack[i].wakeTime = wakeTime;
-        // console.log(user.sleepTrack);
-
-
-        User.findByIdAndUpdate(req.params.id, {sleepTrack: user.sleepTrack} ).then(data=> console.log(data))
+        user.sleepTrack[i].hourSlept = hourSlept;
+        User.findByIdAndUpdate(req.params.id, {sleepTrack: user.sleepTrack} ).then(()=> User.findById(req.params.id).then(data=> res.json(data)))
     })
 })
+
 
 
 module.exports = router;

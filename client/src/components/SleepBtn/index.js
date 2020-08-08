@@ -7,7 +7,7 @@ import "./style.css";
 
 
 function SleepBtn() {
-    const { user } = useContext(AuthContext)
+    const { user, setSleep, sleep } = useContext(AuthContext)
     console.log(user);
 
     //const [sleepTime, setSleepTime] = useState (Date.now);
@@ -17,10 +17,12 @@ function SleepBtn() {
         const date = new Date();
         const now = date.now;
         if(buttonText === "Sleep"){
-            sleepWake ( {type: buttonText}, user._id);
+            sleepWake ({type: buttonText}, user._id)
+            .then(({data})=> setSleep(data.sleepTrack));
         }
         else if (buttonText === "Wake Up"){
-            wakeUp({type: buttonText}, user._id);
+            wakeUp({type: buttonText}, user._id)
+            .then(({data})=> setSleep(data.sleepTrack));
         }
         setButtonText(buttonText === "Sleep" ? "Wake Up" : "Sleep");
     }

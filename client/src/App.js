@@ -6,15 +6,25 @@ import Admin from "./pages/Admin";
 import { AuthContext } from "./context/auth";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar/Navbar";
-import {getCurrentUser} from "./utils/API";
+import { getCurrentUser } from "./utils/API";
 
 
 function App() {
   const [user,setUser] = useState();
-useEffect(()=> getCurrentUser().then(({data})=> setUser(data)), [])
+  const [sleep, setSleep] = useState([]);
+
+useEffect(()=> {
+// if(localStorage.getItem("currentUser")){
+//   setUser(JSON.parse(localStorage.getItem("currentUser")))
+// }else {
+  getCurrentUser().then(({data})=> {
+    setSleep(data.sleepTrack);
+    setUser(data);
+  })
+}, [])
 
   return (
-    <AuthContext.Provider value={{user, setUser}}>
+    <AuthContext.Provider value={{user, setUser, sleep, setSleep}}>
       <Router>
         <div>
           <Navbar></Navbar>

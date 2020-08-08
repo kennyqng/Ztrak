@@ -1,63 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./style.css";
+import {AuthContext} from '../../context/auth'
+import moment from "moment";
+import {getUpdatedSleep} from '../../utils/API'
 
 function Log() {
-  const sleeps = [
-    {
-      date: "08/01/2020",
-      sleepTime: "10:30",
-      wakeTime: "6:30",
-      totalSleep: "8:00",
-      rate: "10"
-    },
-    {
-      date: "07/31/2020",
-      sleepTime: "11:00",
-      wakeTime: "7:30",
-      totalSleep: "8:30",
-      rate: "9"
-    },
-    {
-      date: "07/30/2020",
-      sleepTime: "12:00",
-      wakeTime: "10:30",
-      totalSleep: "10:30",
-      rate: "8"
-    },
-    {
-      date: "07/29/2020",
-      sleepTime: "12:00",
-      wakeTime: "10:30",
-      totalSleep: "10:30",
-      rate: "8"
-    },
-    {
-      date: "07/28/2020",
-      sleepTime: "12:00",
-      wakeTime: "10:30",
-      totalSleep: "10:30",
-      rate: "8"
-    },
-    {
-      date: "07/27/2020",
-      sleepTime: "12:00",
-      wakeTime: "10:30",
-      totalSleep: "10:30",
-      rate: "8"
-    }
-  ];
+
+  const {user,sleep} = useContext(AuthContext);
+
   return (
     <div className="sleepLog">
       <p>Date - Sleep Time -  Wake Time - Total Sleep</p>
       <div className="sleepEntry">
-        {sleeps.map((sleep, index) => (
+        {sleep?.length ? sleep.reverse().map((sleep, index) => (
           <p key={index}>
             {sleep.date} - - -
             {sleep.sleepTime} - - -
             {sleep.wakeTime} - - -
-            {sleep.totalSleep}
+            {sleep.hourSlept}
           </p>
-        ))}
+        )): "You don't have any sleep data, Start Sleeping Now!"}
       </div>
     </div>
   );
