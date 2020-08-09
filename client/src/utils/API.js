@@ -7,3 +7,5 @@ export const sleepWake = (data,id) => axios.put("/api/sleep/newentry/"+id, data)
 export const wakeUp = (data,id) => axios.put("/api/sleep/wakeup/"+id, data);
 // export const hrsSlept = (data,id) => axios.put("/api/sleep/hrsSlept/"+id, data);
 export const getCurrentUser = () => axios.get("/api/auth/user_data");
+export const getUpdatedSleep = () => axios.get("/api/sleep/updatedsleep");
+ 
