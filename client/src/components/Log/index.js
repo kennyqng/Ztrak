@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import {AuthContext} from "../../context/auth";
 
 function Log() {
   const sleeps = [
@@ -48,16 +49,70 @@ function Log() {
   ];
   return (
     <div className="sleepLog">
-      <p>Date - Sleep Time -  Wake Time - Total Sleep</p>
+      
       <div className="sleepEntry">
-        {sleeps.map((sleep, index) => (
+       <table classname="table table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Sleep Time</th>
+      <th scope="col">Wake Time</th>
+      <th scope="col">Hours Slept</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">8/12/2020</th>
+      <td>12:34</td>
+      <td>8:15</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <th scope="row">8/13/2020</th>
+      <td>9:00</td>
+      <td>2:76</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th scope="row">8/14/2020</th>
+      <td>6:00</td>
+      <td>1:00</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th scope="row">8/15/2020</th>
+      <td>4:39</td>
+      <td>11:00</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th scope="row">8/16/2020</th>
+      <td>5:45</td>
+      <td>12:34</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th scope="row">8/17/2020</th>
+      <td>7:22</td>
+      <td>1:00</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th scope="row">8/18/2020</th>
+      <td>8:00</td>
+      <td>9:00</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+        {/* {sleeps.map((sleep, index) => (
           <p key={index}>
             {sleep.date} - - -
             {sleep.sleepTime} - - -
             {sleep.wakeTime} - - -
             {sleep.totalSleep}
           </p>
-        ))}
+        ))} */}
       </div>
     </div>
   );

@@ -21,19 +21,27 @@ function Navbar() {
                   ? "nav-link active"
                   : "nav-link"
               }
-            >
-              Home
+            ><button>Welcome {user? user.username : ""}!</button>
+            
             </Link>
           </li>
           <li>
-            <button>Welcome {user? user.username : ""}!</button>
+            
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/admin"
+              className={window.location.pathname === "/Login" ? "nav-link active" : "nav-link"}
+            >
+              Login
+            </Link>
           </li>
           <li className="nav-item">
             <Link
               to="/admin"
               className={window.location.pathname === "/admin" ? "nav-link active" : "nav-link"}
             >
-              Login
+              Log Out
             </Link>
           </li>
         </ul>
