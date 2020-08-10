@@ -1,13 +1,14 @@
-import React, {useState} from "react";
-import {useParams} from "react-router-dom";
-import {sleepWake} from '../../utils/API'
+import React, {useState, useContext} from "react";
+import {AuthContext} from "../../context/auth"
+// import {useParams} from "react-router-dom";
+import {sleepWake, wakeUp} from '../../utils/API'
 import { Button } from 'reactstrap';
 import "./style.css";
 
 
 function SleepBtn() {
-    let { id } = useParams()
-    console.log(id);
+    const { user, setSleep, sleep } = useContext(AuthContext)
+    console.log(user);
 
     //const [sleepTime, setSleepTime] = useState (Date.now);
     const [buttonText, setButtonText] = useState("Sleep");
@@ -15,8 +16,15 @@ function SleepBtn() {
     const handleSleepWake = () => {
         const date = new Date();
         const now = date.now;
-        setButtonText(buttonText === "Sleep" ? "Wake Up" : "Sleep")
-        sleepWake ({type: buttonText}, id);
+        if(buttonText === "Sleep"){
+            sleepWake ({type: buttonText}, user._id)
+            .then(({data})=> setSleep(data.sleepTrack));
+        }
+        else if (buttonText === "Wake Up"){
+            wakeUp({type: buttonText}, user._id)
+            .then(({data})=> setSleep(data.sleepTrack));
+        }
+        setButtonText(buttonText === "Sleep" ? "Wake Up" : "Sleep");
     }
     
 

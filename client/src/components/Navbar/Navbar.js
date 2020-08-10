@@ -26,7 +26,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            
+            <button>Welcome {user? user._id : ""}!</button>
           </li>
           <li className="nav-item">
             <Link
