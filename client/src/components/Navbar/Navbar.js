@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <Link className="navbar-brand" to="/">
-        ZTrak
+        ZTrĂk
       </Link>
       <div>
         <ul className="navbar-nav">
@@ -21,8 +21,8 @@ function Navbar() {
                   ? "nav-link active"
                   : "nav-link"
               }
-            >
-              Home
+            ><button>Welcome {user? user.username : ""}!</button>
+            
             </Link>
           </li>
           <li>
@@ -31,9 +31,17 @@ function Navbar() {
           <li className="nav-item">
             <Link
               to="/admin"
-              className={window.location.pathname === "/admin" ? "nav-link active" : "nav-link"}
+              className={window.location.pathname === "/Login" ? "nav-link active" : "nav-link"}
             >
               Login
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/admin"
+              className={window.location.pathname === "/admin" ? "nav-link active" : "nav-link"}
+            >
+              Log Out
             </Link>
           </li>
         </ul>
