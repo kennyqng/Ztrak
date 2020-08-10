@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <Link className="navbar-brand" to="/">
-        ZTrak
+        ZTrĂk
       </Link>
       <div>
         <ul className="navbar-nav">

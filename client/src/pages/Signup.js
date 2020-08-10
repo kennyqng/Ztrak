@@ -4,6 +4,7 @@ import { Card, Logo, Form, Input, Button } from '../components/AuthForms';
 import  {signup, login} from '../utils/API'
 import {AuthContext} from "../context/auth";
 import {Redirect} from "react-router-dom";
+import Clock from "../components/Clock";
 
 function Signup() {
   const [isLogin, setIsLogin] = useState(true);
