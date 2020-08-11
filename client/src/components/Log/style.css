@@ -6,10 +6,19 @@
     outline: 004C99;
     min-width: 360px;
     max-width: 700px;
+    max-height: 500px;
     text-align: center;
     border-color: 004C99;
     color: rgb(255, 255, 255);
     border-style: solid;
     background-color: rgb(00, 33, 66);
     opacity: .8;
+    max-height: 400px;
+    overflow: auto;
+}
+.log-header {
+    padding: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-weight: bold;
 }

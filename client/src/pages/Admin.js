@@ -1,20 +1,19 @@
 import React from "react";
-import { Button } from "../components/AuthForms";
 import { useAuth } from "../context/auth";
+import { Button } from 'reactstrap';
 
 function Admin(props) {
   const { setAuthTokens } = useAuth();
 
-  function logOut() {
+  function logOut(user) {
     setAuthTokens();
   }
 
   return (
-    <div>
-      <div>Admin Page</div>
-      <Button onClick={logOut}>Log out</Button>
-    </div>
-  );
+    <div className = "logOut" >
+      <Button size="lg" onClick={logOut}>Log Out!</Button>
+      </div >
+   );
 }
 
 export default Admin;
