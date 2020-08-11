@@ -1,26 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { login } from "../utils/API";
 import Clock from "../components/Clock";
 import Log from "../components/Log";
-import Navbar from "../components/Navbar/Navbar";
 import SleepBtn from "../components/SleepBtn";
 import Chart from "../components/Chart";
 import {Container, Row, Col} from 'reactstrap';
+import { AuthContext } from "../context/auth";
 
-
-function Home(props) {
-  const handleLogin = () => {
-    login({
-      email: "kenny@nguyen.com",
-      password: "watermelon"
-    }).then(({ data }) => {
-      console.log(data);
-    });
+function Home() {
+  const { user } = useContext(AuthContext);
+  function welcome() {
+    if(user){
+      return (
+        <h2 className="welcome">Welcome {user ? user.username : ""}!</h2>
+      )
+    }
+    else {
+      return (
+        <h3 className="welcome">Please log in</h3>
+      )
+    }
   };
   return (
     <>
-      {/* <div>Home Page</div>
-      <button onClick={handleLogin}>CLICK ME TO HIT API ROUTE</button>  RS: I don't think we need these 2 lines??*/}
+      {welcome()}
       <Clock></Clock>
       <SleepBtn/>
         <Container>

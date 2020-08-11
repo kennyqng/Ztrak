@@ -12,4 +12,12 @@
     border-style: solid;
     background-color: rgb(00, 33, 66);
     opacity: .8;
+    max-height: 400px;
+    overflow: auto;
+}
+.log-header {
+    padding: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-weight: bold;
 }
