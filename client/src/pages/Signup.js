@@ -4,6 +4,7 @@ import { Card, Logo, Form, Input, Button } from '../components/AuthForms';
 import  {signup, login} from '../utils/API'
 import {AuthContext} from "../context/auth";
 import {Redirect} from "react-router-dom";
+import Clock from "../components/Clock";
 
 function Signup() {
   const [isLogin, setIsLogin] = useState(true);
@@ -47,7 +48,7 @@ function Signup() {
     <>
     {user ? <Redirect to="/home"/> : ""}
     <Card>
-      <Logo src={logoImg} />
+      <Clock></Clock>
       <Form>email
         <Input onChange={handleInputChange} name="username" type="email" placeholder="email" />
         <Input onChange={handleInputChange} name="password" type="password" placeholder="password" />

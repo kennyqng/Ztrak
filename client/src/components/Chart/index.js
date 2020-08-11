@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Bar } from 'react-chartjs-2';
+import {AuthContext} from '../../context/auth'
 import 'chartjs-plugin-datalabels';
 import "./style.css";
 
 
-
+const {user,sleep} = useContext(AuthContext);
 //display if finished loading otherwise show a loading indicator
 //
 const data = {
@@ -27,6 +28,7 @@ const data = {
 const Chart = (props) => {
 
     return (
+      
       <div className="chart">
         <p>Hours of Sleep For the Week</p>
         <Bar

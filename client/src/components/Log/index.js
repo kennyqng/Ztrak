@@ -8,6 +8,7 @@ function Log() {
   const { user, sleep } = useContext(AuthContext);
 
   return (
+    
     <div className="sleepLog">
       <div className="row log-header" id="log-header">
         <div className="col-sm">Date</div>
@@ -42,3 +43,4 @@ function Log() {
 }
 
 export default Log;
+
