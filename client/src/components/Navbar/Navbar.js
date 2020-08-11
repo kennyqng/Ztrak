@@ -22,15 +22,13 @@ function Navbar() {
                   ? "nav-link active"
                   : "nav-link"
               }
-            ><button>Welcome {user? user.username : ""}!</button>
-            
-            </Link>
+            ></Link>
           </li>
           <li className="nav-item">
             <Link
-              to="/admin"
+              to="/"
               className={
-                window.location.pathname === "/admin"
+                window.location.pathname === "/"
                   ? "nav-link active"
                   : "nav-link"
               }
@@ -41,7 +39,11 @@ function Navbar() {
           <li className="nav-item">
             <Link
               to="/admin"
-              className={window.location.pathname === "/admin" ? "nav-link active" : "nav-link"}
+              className={
+                window.location.pathname === "/admin"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
             >
               Log Out
             </Link>
