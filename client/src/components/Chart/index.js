@@ -4,8 +4,6 @@ import {AuthContext} from '../../context/auth'
 import 'chartjs-plugin-datalabels';
 import "./style.css";
 
-
-const {user,sleep} = useContext(AuthContext);
 //display if finished loading otherwise show a loading indicator
 //
 const data = {
@@ -26,6 +24,7 @@ const data = {
 
 
 const Chart = (props) => {
+  const {user,sleep} = useContext(AuthContext);
 
     return (
       
