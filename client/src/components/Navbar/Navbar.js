@@ -31,20 +31,10 @@ function Navbar() {
               }
             ></Link>
           </li>
-          <li className="nav-item">
-            <Link
-              to="/"
-              className={
-                window.location.pathname === "/"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Login
-            </Link>
-          </li>
           <li onClick={handleLogout} className="nav-item" style={{cursor: "pointer"}}>
-              Log Out
+            <Link>
+              Logout
+            </Link>
           </li>
         </ul>
       </div>
