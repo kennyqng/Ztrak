@@ -27,7 +27,7 @@ function Log() {
                   <p key={index}>{moment(sleep.sleepTime).format("LTS")}</p>
                 </div>
                 <div className="col-sm">
-                  <p key={index}>{moment(sleep.sleepWake).format("LTS")}</p>
+                  <p key={index}>{moment(sleep.wakeTime).format("LTS")}</p>
                 </div>
                 <div className="col-sm">
                   <p key={index}>
