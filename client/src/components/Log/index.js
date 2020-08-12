@@ -2,11 +2,11 @@ import React, { useState, useContext, useEffect } from "react";
 import "./style.css";
 import { AuthContext } from "../../context/auth";
 import moment from "moment";
-import { getUpdatedSleep } from "../../utils/API";
 
 function Log() {
   const { user, sleep } = useContext(AuthContext);
 
+  console.log(sleep)
   return (
     
     <div className="sleepLog">
@@ -27,11 +27,11 @@ function Log() {
                   <p key={index}>{moment(sleep.sleepTime).format("LTS")}</p>
                 </div>
                 <div className="col-sm">
-                  <p key={index}>{moment(sleep.wakeTime).format("LTS")}</p>
+                  <p key={index}>{sleep.wakeTime ? moment(sleep.wakeTime).format("LTS"): ""}</p>
                 </div>
                 <div className="col-sm">
                   <p key={index}>
-                    {sleep.hourSlept +" sec"}
+                    {sleep.hourSlept ? sleep.hourSlept +" sec" : "sleeping"}
                   </p>
                 </div>
               </div>

@@ -2,6 +2,12 @@ const router = require("express").Router();
 const {User} = require("../models");
 const moment = require('moment');
 
+router.get("/updatedsleep", (req,res)=> {
+    User.findById(req.user._id).then(user => {
+        console.log(user.sleepTrack)
+    })
+})
+
 router.put("/newentry/:id", (req,res)=>{
     console.log("---------->"+req.params.id)
     const { type } = req.body;

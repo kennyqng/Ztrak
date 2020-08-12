@@ -31,8 +31,8 @@ const Chart = (props) => {
   useEffect(() => {
     console.log("user", user);
     if(user) {
-      const hours = user.sleepTrack.map((item, index) => index < 10 ? item.hourSlept : null);
-      const dates = user.sleepTrack.map((item, index) => index < 10 ? item.date : null);
+      const hours = user.sleepTrack.slice(0,10).map(item => item.hourSlept);
+      const dates = user.sleepTrack.slice(0,10).map(item => item.date);
 
       console.log("hours", hours)
   
