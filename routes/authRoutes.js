@@ -8,6 +8,11 @@ router.post("/login",passport.authenticate('local'),((req,res)=>{
     res.json(req.user)
 }))
 
+router.get("/logout", (req,res)=> {
+    req.logout();
+    res.json("logged out!")
+})
+
 router.post('/signup', ({body:{passwordConf, ...data}},res)=>{
     db.User.create(data).then(user=> {
         console.log(user)
