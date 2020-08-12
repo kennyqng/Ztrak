@@ -5,8 +5,7 @@ import moment from "moment";
 
 function Log() {
   const { user, sleep } = useContext(AuthContext);
-
-  console.log(sleep)
+  console.log("this is log",sleep)
   return (
     
     <div className="sleepLog">

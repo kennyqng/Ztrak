@@ -17,10 +17,11 @@ useEffect(()=> {
 // if(localStorage.getItem("currentUser")){
 //   setUser(JSON.parse(localStorage.getItem("currentUser")))
 // }else {
-  getCurrentUser().then(({data})=> {
-    setUser(data);
+  getCurrentUser().then((res)=> {
+    setUser(res.data);
     getUpdatedSleep().then(({data})=> {
-       setSleep(data.sleepTrack);
+      console.log(data)
+       setSleep(data);
     })
     
   })

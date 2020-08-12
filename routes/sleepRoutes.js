@@ -4,7 +4,7 @@ const moment = require('moment');
 
 router.get("/updatedsleep", (req,res)=> {
     User.findById(req.user._id).then(user => {
-        console.log(user.sleepTrack)
+        res.json(user.sleepTrack)
     })
 })
 

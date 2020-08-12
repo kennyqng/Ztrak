@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../context/auth";
 // import {useParams} from "react-router-dom";
 import { sleepWake, wakeUp } from "../../utils/API";
@@ -10,6 +10,14 @@ function SleepBtn() {
   console.log(user);
 
   const [buttonText, setButtonText] = useState("Sleep");
+  useEffect(()=> {
+    if(sleep.length){
+      if(!sleep[0].wakeTime){
+      setButtonText("Wake Up")
+    }
+    }
+    
+  }, [sleep])
 
   const handleSleepWake = () => {
     const date = new Date();
