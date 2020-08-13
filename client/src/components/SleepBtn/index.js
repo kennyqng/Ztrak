@@ -10,14 +10,13 @@ function SleepBtn() {
   console.log(user);
 
   const [buttonText, setButtonText] = useState("Sleep");
-  useEffect(()=> {
-    if(sleep.length){
-      if(!sleep[0].wakeTime){
-      setButtonText("Wake Up")
+  useEffect(() => {
+    if (sleep.length) {
+      if (!sleep[0].wakeTime) {
+        setButtonText("Wake Up");
+      }
     }
-    }
-    
-  }, [sleep])
+  }, [sleep]);
 
   const handleSleepWake = () => {
     const date = new Date();
@@ -27,7 +26,7 @@ function SleepBtn() {
         sleepWake({ type: buttonText }, user._id).then(({ data }) =>
           setSleep(data.sleepTrack)
         );
-      }else return;
+      } else return;
     } else if (buttonText === "Wake Up") {
       wakeUp({ type: buttonText }, user._id).then(({ data }) =>
         setSleep(data.sleepTrack)
@@ -38,7 +37,7 @@ function SleepBtn() {
 
   return (
     <div className="button-container" justify-content="center">
-      <Button size="lg" onClick={handleSleepWake}>
+      <Button style={{ backgroundColor: "#4BBC93" }} size="lg" onClick={handleSleepWake}>
         {buttonText}
       </Button>
     </div>

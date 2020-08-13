@@ -9,26 +9,27 @@ function Log() {
   return (
     
     <div className="sleepLog">
-      <div className="row log-header" id="log-header">
-        <div className="col-sm">Date</div>
-        <div className="col-sm">Sleep Time</div>
-        <div className="col-sm">Wake Time</div>
-        <div className="col-sm">Total Sleep</div>
+      <div className="row log-header">
+        <div className="col-3">Date</div>
+        <div className="col-3">Sleep Time</div>
+        <div className="col-3">Wake Time</div>
+        <div className="col-3">Total Sleep</div>
       </div>
+      <div className="border"></div>
       <div className="sleepEntry">
         {sleep?.length
           ? sleep.reverse().map((sleep, index) => (
               <div className="row">
-                <div className="col-sm">
+                <div className="col-3">
                   <p key={index}>{sleep.date}</p>
                 </div>
-                <div className="col-sm">
+                <div className="col-3">
                   <p key={index}>{moment(sleep.sleepTime).format("LTS")}</p>
                 </div>
-                <div className="col-sm">
+                <div className="col-3">
                   <p key={index}>{sleep.wakeTime ? moment(sleep.wakeTime).format("LTS"): ""}</p>
                 </div>
-                <div className="col-sm">
+                <div className="col-3">
                   <p key={index}>
                     {sleep.hourSlept ? sleep.hourSlept +" sec" : "sleeping"}
                   </p>

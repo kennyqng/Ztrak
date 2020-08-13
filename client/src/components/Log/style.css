@@ -22,3 +22,15 @@
     padding-bottom: 2%;
     font-weight: bold;
 }
+.border {
+    margin-bottom: 2%;
+}
+
+.sleepLog ::-webkit-scrollbar {
+    display: none;
+}
+
+.sleepLog {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
