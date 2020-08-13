@@ -1,12 +1,42 @@
 body {
-  background-image: url("./assets/night-background.jpg");
-  background-size: 100% 100%;
+  /* background-image: url("./assets/sunrise-background.jpg");
+  background-size: 100% 100% ;
+  background-repeat: no-repeat;
+  background-position: center; */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@media (max-width: 375px) {
+  body {
+      background: #cccccc;
+      background-image: url("./assets/night-background-iphonex.jpg");
+  }
+}
+
+@media (min-width: 376px) and (max-width: 600px) {
+  body {
+      background: #888888;
+      background-image: url("./assets/night-background-iphone6plus.jpg");
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px){
+  body {
+      background: #222222;
+      background-image: url("./assets/night-background-ipad.jpg");
+  }
+}
+@media (min-width: 769px){
+  body {
+      background: #222222;
+      background-image: url("./assets/night-background-desktop.jpg");
+      background-size: 100% 100%, cover;
+
+  }
 }
 
 code {
@@ -15,5 +45,6 @@ code {
 }
 .welcome {
   color: white;
-  padding: 1%;
+  padding: 1% 2% 1%;
+  text-align: right;
 }

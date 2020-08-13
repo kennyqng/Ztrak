@@ -1,8 +1,8 @@
 .button-container {
-    margin: 15px;
-    padding: 50px 45vw 50px 45vw;
-    margin: auto;
-    display: block;
-    
-   
+    /* margin: 3%;
+    padding: 50px 45vw 50px 45vw; */
+    padding: 3%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }

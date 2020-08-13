@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { login } from "../utils/API";
 import Clock from "../components/Clock";
 import Log from "../components/Log";
 import SleepBtn from "../components/SleepBtn";
 import Chart from "../components/Chart";
 import {Container, Row, Col} from 'reactstrap';
 import { AuthContext } from "../context/auth";
+import {Redirect} from 'react-router-dom';
 
 function Home() {
   const { user } = useContext(AuthContext);
@@ -24,6 +24,7 @@ function Home() {
   return (
     <>
       {welcome()}
+      {!user? <Redirect to="/"/> : ""}
       <Clock></Clock>
       <SleepBtn/>
         <Container>

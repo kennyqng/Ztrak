@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import { AuthContext } from "./context/auth";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar/Navbar";
-import { getCurrentUser } from "./utils/API";
+import { getCurrentUser, getUpdatedSleep} from "./utils/API";
 
 
 function App() {
@@ -17,9 +17,13 @@ useEffect(()=> {
 // if(localStorage.getItem("currentUser")){
 //   setUser(JSON.parse(localStorage.getItem("currentUser")))
 // }else {
-  getCurrentUser().then(({data})=> {
-    setSleep(data.sleepTrack);
-    setUser(data);
+  getCurrentUser().then((res)=> {
+    setUser(res.data);
+    getUpdatedSleep().then(({data})=> {
+      console.log(data)
+       setSleep(data);
+    })
+    
   })
 }, [])
 
@@ -36,9 +40,12 @@ useEffect(()=> {
               <Link to="/admin">Admin Page</Link>
             </li>
           </ul> */}
-          <Route exact path="/" component={Signup} />
+          <Switch>
+             <Route exact path="/" component={Signup} />
           <Route exact path="/home" component={Home} />
           <PrivateRoute exact path="/admin" component={Admin} />
+          </Switch>
+         
         </div>
       </Router>
     </AuthContext.Provider>

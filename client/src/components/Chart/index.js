@@ -29,17 +29,16 @@ const Chart = (props) => {
   const [sleepDates, setSleepDates] = useState([]);
   
   useEffect(() => {
-    console.log("user", user);
-    if(user) {
-      const hours = user.sleepTrack.map((item, index) => index < 10 ? item.hourSlept : null);
-      const dates = user.sleepTrack.map((item, index) => index < 10 ? item.date : null);
+    if(sleep.length){
+      const hours = sleep.slice(0,10).map(item => item.hourSlept);
+      const dates = sleep.slice(0,10).map(item => item.date);
 
       console.log("hours", hours)
   
       setHoursSlept(hours)
       setSleepDates(dates);
     }
-  }, [user]);
+  }, [sleep]);
   
     return (
       
