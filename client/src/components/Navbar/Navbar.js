@@ -20,18 +20,6 @@ function Navbar() {
       </Link>
       <div>
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link
-              to="/"
-              className={
-                window.location.pathname === "/"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Login
-            </Link>
-          </li>
           <li
             onClick={handleLogout}
             className="nav-item"
