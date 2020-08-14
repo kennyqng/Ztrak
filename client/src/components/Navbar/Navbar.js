@@ -4,7 +4,6 @@ import "./style.css";
 import { AuthContext } from "../../context/auth";
 import { logout } from "../../utils/API";
 
-// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
   const { user, setUser } = useContext(AuthContext);
 

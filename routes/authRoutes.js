@@ -3,7 +3,6 @@ const passport = require("../config/passport");
 const db = require("../models") 
 
 router.post("/login",passport.authenticate('local'),((req,res)=>{
-    //do some stuff with db to check credentials;
     console.log('success!')
     res.json(req.user)
 }))
