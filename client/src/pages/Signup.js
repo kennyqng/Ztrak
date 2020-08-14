@@ -50,7 +50,7 @@ function Signup() {
     {user ? <Redirect to="/home"/> : ""}
     <Card>
       <Clock></Clock>
-      <Form>email
+      <Form>
         <Input onChange={handleInputChange} name="username" type="email" placeholder="email" />
         <Input onChange={handleInputChange} name="password" type="password" placeholder="password" />
         {isLogin ? "" : <Input onChange={handleInputChange} name="passwordConf" type="password" placeholder="password again" />}
