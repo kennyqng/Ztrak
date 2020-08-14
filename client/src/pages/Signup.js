@@ -39,8 +39,9 @@ function Signup() {
         })
       }else{
         signup({username:input.username, password:input.password}).then(({data})=>{
-          console.log(data)
+          console.log(data);
         })
+        window.location.replace("/home")
       }
   }
  
