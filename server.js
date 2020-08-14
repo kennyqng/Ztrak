@@ -14,7 +14,7 @@ const routes = require("./routes");
 app.use(cors()); //mongodbAtlas
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+//boooo
 //Atlas connection
 const uri = process.env.ATLAS_URI || "mongodb://localhost/ztrakdev_db";
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true,  useUnifiedTopology: true  }
