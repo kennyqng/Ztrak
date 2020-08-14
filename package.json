@@ -1,0 +1,48 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennyqng/project3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennyqng/project3/issues"
+  },
+  "homepage": "https://github.com/kennyqng/project3#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bootstrap": "^4.5.1",
+    "chart.js": "^2.9.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "if-env": "^1.0.4",
+    "moment": "^2.27.0",
+    "mongoose": "^5.9.25",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "reactstrap": "^8.5.1",
+    "strap": "^0.1.0",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

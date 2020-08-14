@@ -1,0 +1,11 @@
+.clock {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#canvas {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

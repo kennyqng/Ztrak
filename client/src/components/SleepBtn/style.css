@@ -1,0 +1,8 @@
+.button-container {
+    /* margin: 3%;
+    padding: 50px 45vw 50px 45vw; */
+    padding: 3%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
