@@ -4,41 +4,46 @@
 ## About
 ZTrak  is a sleep tracking app for logging and displaying sleep times and length. The purpose of the app is to understand your bedtime patterns with detailed sleep tracking tables and graphs. Tracking your sleeping patterns means you can wake up feeling refreshed and ready to start your day.
 
-## User Story
-As a user I want to track the time I go to bed and the time I wake up.
-I want to see the times along with a total time asleep 
-And visualize my sleep duration over time in a graph
+<br/>
 
-**Click** **[here](https://ztrak.herokuapp.com)** **to visit the website!**<br/>
+## Click **[here](https://ztrak.herokuapp.com)** to visit the website!<br/>
 **Demo Login:**<br/>
 username: `ztrak@herokuapp.com`<br/>
 password: `abc123`<br/>
 
 <br/>
 
-<br/>
 
 ## Table of Content
-
+* [User Story](#user-story)
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
 
 <br/>
 
+
+## User Story
+As a user I want to track the time I go to bed and the time I wake up.
+I want to see the times along with a total time asleep 
+And visualize my sleep duration over time in a graph
+
 <br/>
+
 
 ## Usage
 
 Sign up:<br/>
 ![](assets/signupGIF.gif)<br/>
+<br/>
 Log in:<br/>
 ![](assets/login.gif)<br/>
+<br/>
 Start sleep session:<br/>
 ![](assets/sleep.gif)<br/>
+<br/>
 End sleep session and view history and graph:<br/>
 ![](assets/wake.gif)<br/>
-
 <br/>
 
 <br/>
